@@ -20,7 +20,7 @@ export default class Filter extends Component {
                 this.setState({ [btn]: ' selected' })
             }
         )
-        this.props.filterList(btn);
+        this.props.setFilter(btn);
     }
     
     render() {

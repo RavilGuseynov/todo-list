@@ -17,18 +17,17 @@ export default class App extends Component {
         text: 'drink coffee',
         done: false,
         important: false,
-        show: true,
-        filter: false
+        show: true
       },
       { 
         id: 'sdf6s156f1s6fdwd',
-        text: 'drink one more coffee',
+        text: 'Learn React',
         done: false,
         important: false,
-        show: true,
-        filter: false
+        show: true
       }
-    ]
+    ],
+    filter: 'all' // active, done
   }
 
   addItem = (item) => {
@@ -57,7 +56,7 @@ export default class App extends Component {
   getItemsByPref = (pref) => {
     let { todos } = {...this.state};
     todos.forEach((item) => {
-      if (item.text.indexOf(pref) === -1) {
+      if (item.text.toLowerCase().indexOf(pref.toLowerCase()) === -1) {
         item.show = false;        
       }
       else {
@@ -67,37 +66,22 @@ export default class App extends Component {
     this.setState( { todos } );
   }
 
-  filterList = (btn) => {
-    const { todos } = {...this.state};
-    switch (btn) {
+  setFilter = (filter) => {
+    this.setState({ filter });
+  }
+
+  filterItems = () => {
+    const { todos, filter } = {...this.state};
+    switch(filter) {
       case 'all':
-        todos.forEach((item) => {
-          item.filter = false;
-        })
-        break
+        return todos.filter((item) => {return item});
       case 'active':
-        todos.forEach((item) => {
-          if (item.done === false) {
-            item.filter = false;
-          }
-          else {
-            item.filter = true;
-          }
-        })
-        break
+        return todos.filter((item) => {return !item.done});
       case 'done':
-        todos.forEach((item) => {
-          if (item.done === true) {
-            item.filter = false;
-          }
-          else {
-            item.filter = true;
-          }
-        })
-        break
-      default: alert('something went wrong...(')
+        return todos.filter((item) => {return item.done});
+      default:
+        return todos
     }
-    this.setState({ todos })
   }
 
   render() {
@@ -110,10 +94,10 @@ export default class App extends Component {
             todos={this.state.todos}
             getItemsByPref={this.getItemsByPref}  
           />
-          <Filter filterList={this.filterList}/>
+          <Filter setFilter={this.setFilter}/>
         </div>
         <TodoList 
-          todos={this.state.todos} 
+          todos={this.filterItems()} 
           deleteItem={this.deleteItem}
           toggleItemProp={this.toggleItemProp}
         />

@@ -14,9 +14,6 @@ const TodoList = ( props ) => {
 
     let items = props.todos
         .filter((item) => {
-            return !item.filter
-        })
-        .filter((item) => {
             return item.show
         })
         .map( (item) => {
@@ -32,7 +29,7 @@ const TodoList = ( props ) => {
     })
 
     if (items.length === 0) {
-        items = <div className='no-todos-text'>No todos to do</div>
+        items = <div className='no-todos-text'>No todos found</div>
     }
 
     return (

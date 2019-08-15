@@ -25,9 +25,19 @@
     border: solid 1px green;
 }
 
+.important-btn:hover {
+    background-color: green;
+    color: white;
+}
+
 .delete-btn {
     color: red;
     border: solid 1px red;
+}
+
+.delete-btn:hover {
+    background-color: red;
+    color: white;
 }
 
 .important {

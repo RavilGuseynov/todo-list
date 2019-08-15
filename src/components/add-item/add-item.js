@@ -20,8 +20,7 @@ export default class AddItem extends Component {
             text,
             done: false,
             important: false,
-            show: true,
-            filter: false
+            show: true
         }
     }
 
