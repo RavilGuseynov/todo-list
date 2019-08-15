@@ -1,0 +1,40 @@
+.todo-item {
+    font-size: 20px;
+    padding: 10px;
+}
+
+    .todo-item-text {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+.btn {
+    background-color: white;
+    border: none;
+    float: right;
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 22px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.important-btn {
+    color: green;
+    border: solid 1px green;
+}
+
+.delete-btn {
+    color: red;
+    border: solid 1px red;
+}
+
+.important {
+    color: #2a5885;
+    font-weight: bold;
+}
+
+.done {
+    text-decoration: line-through;
+}

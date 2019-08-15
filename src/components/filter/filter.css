@@ -1,0 +1,27 @@
+.filter-btn {
+    background-color: white;
+    border: solid 1px #2a5885;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #2a5885;
+    font-weight: bold;
+    height: 34px;
+}
+
+.filter-btn:hover { 
+    background-color: #2a5885;
+    color: white; 
+}
+
+.all-btn {
+    margin-right: 2px;
+}
+
+.active-btn {
+    margin-right: 2px;
+}
+
+.selected {
+    background-color: #2a5885;
+    color: white;
+}

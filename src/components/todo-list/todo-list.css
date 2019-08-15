@@ -1,0 +1,15 @@
+.todo-list {
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+    margin: 20px 0 0 20px;
+    width: 500px;
+    padding: 0 10px;
+}
+
+.no-todos-text {
+    padding: 10px;
+    font-size: 20px;
+    font-style: italic;
+    color: grey;
+    font-family: 'Courier New', Courier, monospace;
+}
